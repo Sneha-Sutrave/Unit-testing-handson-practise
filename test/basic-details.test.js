@@ -3,6 +3,22 @@ import { stub } from 'sinon';
 import '../src/LoanBasicDetails/BasicDetails.js';
 
 describe('Basic details', () => {
-  // Write test cases inside this block
-  // refer basic-details.js files
+   it('checks for Accessible', async () => {
+    expect(obj).to.be.accessible;
+  });
+   it('checks for spy to _toDashboard', () => {
+    const SpyMethod = Sinon.spy(obj, '_toDashboard');
+    obj._toDashboard();
+    expect(SpyMethod.calledOnce).to.be.true;
+  });
+  it('checks for spy function _captureDetails', async () => {
+    const myspy = Sinon.spy(obj, '_captureDetails');
+    obj._captureDetails();
+    expect(myspy.calledOnce).to.be.true;
+  });
+  it('checks for spy function _numToWord', async () => {
+    const myspy = Sinon.spy(obj, '_numToWord');
+    obj._numToWord();
+    expect(myspy.calledOnce).to.be.true;
+  });
 });
